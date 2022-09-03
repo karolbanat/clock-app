@@ -1,0 +1,53 @@
+@use '../base/mixins';
+
+.details-toggle {
+	--background: var(--clr-neutral-100);
+	--border-width: 0.4rem;
+	--ls: 3.75px;
+	/* layout */
+	display: inline-flex;
+	align-items: center;
+	gap: 1.4rem;
+	padding-left: 1.5em;
+	/* typography */
+	font-size: var(--fz-button);
+	font-weight: var(--fw-700);
+	text-transform: uppercase;
+	letter-spacing: var(--ls);
+	color: var(--clr-neutral-900);
+	/* appearance */
+	background-color: var(--background);
+	border: var(--border-width) solid var(--background);
+	border-radius: 100vmax;
+	/* other */
+	cursor: pointer;
+
+	/* elements */
+	& img {
+		transition: opacity 0.35s ease;
+	}
+
+	&__less {
+		display: none;
+	}
+
+	/* state */
+	&:is(:hover, :focus) img {
+		opacity: 0.75;
+	}
+
+	/* text switch for aria expanded state change */
+	&[aria-expanded='true'] &__more {
+		display: none;
+	}
+
+	&[aria-expanded='true'] &__less {
+		display: inline-block;
+	}
+
+	/* media */
+	@include mixins.mq(medium) {
+		--border-width: 0.8rem;
+		--ls: 5px;
+	}
+}

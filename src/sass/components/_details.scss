@@ -1,0 +1,46 @@
+@use '../base/mixins';
+
+.details {
+	--padding-block: 4.8rem;
+	--layout-gap: 1.8rem;
+	display: none;
+	padding-block: var(--padding-block);
+	background-color: var(--bg-details);
+	color: var(--text-details);
+	@include mixins.mq(medium) {
+		--padding-block: 12rem;
+		--layout-gap: 4.8rem;
+	}
+	@include mixins.mq(large) {
+		--padding-block: 7.4rem;
+	}
+
+	&__layout {
+		display: grid;
+		gap: var(--layout-gap);
+		@include mixins.mq(medium) {
+			grid-template-columns: 1.4fr 1fr;
+		}
+	}
+
+	&__column {
+		display: flex;
+		flex-direction: column;
+		gap: var(--layout-gap);
+		@include mixins.mq(large) {
+			&:last-child {
+				position: relative;
+				&::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: clamp(-10rem, 1rem - 7.5vw, -6rem);
+					width: 1px;
+					height: 100%;
+					background-color: var(--details-separator);
+					opacity: 0.25;
+				}
+			}
+		}
+	}
+}

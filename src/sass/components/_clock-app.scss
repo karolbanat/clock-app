@@ -1,0 +1,40 @@
+@use '../base/mixins';
+
+.clock-app {
+	position: relative;
+	isolation: isolate;
+	display: grid;
+	min-height: 100vh;
+	background-image: var(--clock-app-bg-image, none);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	/* backgorund shadow for better text visibility */
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-color: hsl(0 0% 0% / 0.5);
+		z-index: -10;
+	}
+
+	&__header {
+		--padding-top: 3.2rem;
+		--padding-bottom: 4rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 6.4rem;
+		padding-top: var(--padding-top);
+		padding-bottom: var(--padding-bottom);
+		@include mixins.mq(medium) {
+			--padding-top: 8rem;
+			--padding-bottom: 6.4rem;
+		}
+		@include mixins.mq(medium) {
+			--padding-top: 5.6rem;
+			--padding-bottom: 9.8rem;
+		}
+	}
+}

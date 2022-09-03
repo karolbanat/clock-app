@@ -18,49 +18,52 @@
 	<title>Frontend Mentor | Clock App</title>
 </head>
 
-<body>
+<body data-time="daytime">
 
 	<main>
-		<section data-time="daytime" id="clock-app" class="clock-app">
+		<section id="clock-app" class="clock-app">
 			<h1 class="visually-hidden">Clock app</h1>
-			<div class="container">
-				<div class="clock-app__header">
-					<div id="quote-generator" class="quote-generator">
-						<figure class="flow">
-							<blockquote id="quote" class="quote-generator__quote">The science of operations, as derived
-								from
-								mathematics more especially, is a science of itself, and has its own abstract truth and
-								value.</blockquote>
-							<figcaption id="quote-author" class="quote-generator__author">Ada Lovelace</figcaption>
-						</figure>
-						<button aria-label="Refresh quote"
-								data-action="quote-refresh"
-								class="quote-generator__refresh-button">
-							<img src="./dist/assets/desktop/icon-refresh.svg" alt="">
-						</button>
-					</div>
+			<div class="clock-app__header | container">
+				<div id="quote-generator" class="quote-generator">
+					<figure class="quote-generator__quote | flow">
+						<blockquote id="quote">The science of operations, as derived
+							from
+							mathematics more especially, is a science of itself, and has its own abstract truth and
+							value.</blockquote>
+						<figcaption id="quote-author" class="quote-generator__author">Ada Lovelace</figcaption>
+					</figure>
+					<button aria-label="Refresh quote"
+							data-action="quote-refresh"
+							class="quote-generator__refresh-button">
+						<img src="./dist/assets/desktop/icon-refresh.svg" alt="">
+					</button>
+				</div>
 
-					<div class="time-info">
-						<div class="flow">
-							<p class="time-info__greeting">
-								<img src="./dist/assets/desktop/icon-sun.svg"
-									 alt=""
-									 id="time-of-day-icon"
-									 class="time-info__icon">
-								Good <span id="greeting">morning</span>, it's currently
-							</p>
-							<p class="time-info__time">
-								<span id="current-time">11:37</span>
-								<span id="timezone" class="time-info__timezone">BST</span>
-							</p>
-							<p class="location">in <span id="location">London, UK</span></p>
-						</div>
-						<button data-action="toggle-details"
-								class="details-toggle">
-							<span id="details-cta-text">More</span> <span class="visually-hidden">details</span>
-							<img src="./dist/assets/desktop/icon-arrow-up.svg" alt="" id="details-cta-icon">
-						</button>
+				<div class="time-info">
+					<div class="flow" style="--flow-spacer: 1.6rem">
+						<p class="time-info__greeting">
+							<img src="./dist/assets/desktop/icon-sun.svg"
+								 alt=""
+								 id="time-of-day-icon"
+								 class="time-info__icon">
+							<span> Good <span id="greeting">morning</span><span data-hidden="small">, it's
+									currently</span></span>
+						</p>
+						<p class="time-info__time">
+							<span id="current-time">11:37</span><span id="timezone"
+								  class="time-info__timezone">BST</span>
+						</p>
+						<p class="time-info__location">in <span id="location">London, UK</span></p>
 					</div>
+					<button aria-controls="time-details"
+							aria-expanded="false"
+							data-action="toggle-details"
+							class="details-toggle">
+						<span class="details-toggle__more">More</span> <span class="details-toggle__less">Less</span>
+						<span
+							  class="visually-hidden">details</span>
+						<img src="./dist/assets/desktop/icon-arrow-up.svg" alt="" id="details-cta-icon">
+					</button>
 				</div>
 			</div>
 

@@ -1,0 +1,32 @@
+.quote-generator {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.5em;
+
+	&__quote {
+		max-width: 50ch;
+		font-size: var(--fz-quote);
+	}
+
+	&__author {
+		font-weight: var(--fw-700);
+	}
+
+	&__refresh-button {
+		width: 5rem;
+		aspect-ratio: 2 / 1;
+		background: none;
+		border: none;
+		cursor: pointer;
+
+		& img {
+			opacity: 0.5;
+			transition: opacity 0.35s ease, transform 0.35s ease;
+		}
+
+		&:is(:hover, :focus) img {
+			opacity: 1;
+			transform: rotate(360deg);
+		}
+	}
+}

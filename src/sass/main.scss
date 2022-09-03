@@ -3,5 +3,13 @@
 @use './base/base';
 
 @use './layout/flow';
+@use './layout/container';
+
+@use './components/clock-app';
+@use './components/quote-generator';
+@use './components/time-info';
+@use './components/details-toggle';
+@use './components/details';
+@use './components/info-group';
 
 @use './utility/visually-hidden';

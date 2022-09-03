@@ -1,6 +1,41 @@
+@use '../base/mixins';
+
 body {
 	font-family: var(--ff-primary);
 	font-weight: var(--fw-400);
 	color: var(--clr-neutral-100);
 	background-color: var(--clr-neutral-700); // fallback if image won't load
+
+	&[data-time='daytime'] {
+		--clock-app-bg-image: url('../assets/mobile/bg-image-daytime.jpg');
+		/* styling for details section */
+		--bg-details: hsl(0 0% 100% / 0.75);
+		--text-details: var(--clr-neutral-700);
+		--details-separator: var(--clr-neutral-700);
+	}
+	&[data-time='nighttime'] {
+		--clock-app-bg-image: url('../assets/mobile/bg-image-nighttime.jpg');
+		/* styling for details section */
+		--bg-details: hsl(0 0% 0% / 0.75);
+		--text-details: var(--clr-neutral-100);
+		--details-separator: var(--clr-neutral-100);
+	}
+
+	@include mixins.mq(small) {
+		&[data-time='daytime'] {
+			--clock-app-bg-image: url('../assets/tablet/bg-image-daytime.jpg');
+		}
+		&[data-time='nighttime'] {
+			--clock-app-bg-image: url('../assets/tablet/bg-image-nighttime.jpg');
+		}
+	}
+
+	@include mixins.mq(large) {
+		&[data-time='daytime'] {
+			--clock-app-bg-image: url('../assets/desktop/bg-image-daytime.jpg');
+		}
+		&[data-time='nighttime'] {
+			--clock-app-bg-image: url('../assets/desktop/bg-image-nighttime.jpg');
+		}
+	}
 }
