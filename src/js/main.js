@@ -136,4 +136,4 @@ toggleTimeDetailsBtn.addEventListener('click', handleDetailsToggle);
 
 /*  */
 getRandomQuote();
-// getIPInfo();
+getIPInfo();

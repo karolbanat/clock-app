@@ -6,6 +6,7 @@
 	display: none;
 	padding-block: var(--padding-block);
 	background-color: var(--bg-details);
+	backdrop-filter: blur(3px);
 	color: var(--text-details);
 	@include mixins.mq(medium) {
 		--padding-block: 12rem;
