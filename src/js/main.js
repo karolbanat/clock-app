@@ -89,12 +89,16 @@ const handleTimeData = ({ abbreviation, datetime, dayOfWeek, dayOfYear, weekNumb
 	insertGreeting(hours);
 	handleIcon(hours);
 	handleBackgroundImage(hours);
-	currentTimeSpan.innerText = `${hours}:${minutes}`;
+	currentTimeSpan.innerText = `${hours}:${formatMinutes(minutes)}`;
 	timezoneSpan.innerText = abbreviation;
 	detailsTimezone.innerText = timezone;
 	detailsDayOfTheYear.innerText = dayOfYear;
 	detailsDayOfTheWeek.innerText = dayOfWeek;
 	detailsWeekNumber.innerText = weekNumber;
+};
+
+const formatMinutes = (minutes) => {
+	return `${minutes < 10 ? '0' : ''}${minutes}`;
 };
 
 /* set greeting depending on the time of the day */
