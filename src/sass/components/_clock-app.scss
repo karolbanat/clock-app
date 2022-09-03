@@ -19,6 +19,10 @@
 		z-index: -10;
 	}
 
+	&[data-mode='details'] {
+		align-content: end;
+	}
+
 	&__header {
 		--padding-top: 3.2rem;
 		--padding-bottom: 4rem;
@@ -32,7 +36,7 @@
 			--padding-top: 8rem;
 			--padding-bottom: 6.4rem;
 		}
-		@include mixins.mq(medium) {
+		@include mixins.mq(large) {
 			--padding-top: 5.6rem;
 			--padding-bottom: 9.8rem;
 		}

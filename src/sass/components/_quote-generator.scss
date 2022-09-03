@@ -1,11 +1,22 @@
+@use '../base/mixins';
+
 .quote-generator {
 	display: flex;
 	align-items: flex-start;
 	gap: 0.5em;
 
+	&[data-hidden] {
+		display: none;
+	}
+
 	&__quote {
-		max-width: 50ch;
+		--width: 50ch;
+		max-width: var(--width);
+		width: 100%;
 		font-size: var(--fz-quote);
+		@include mixins.mq(small) {
+			width: var(--width); // seting constant width for larger screens and shorter quotes
+		}
 	}
 
 	&__author {
@@ -13,8 +24,12 @@
 	}
 
 	&__refresh-button {
-		width: 5rem;
-		aspect-ratio: 2 / 1;
+		--width: 3.6rem;
+		display: inline-grid;
+		place-items: center;
+		min-width: var(--width);
+		width: var(--width);
+		aspect-ratio: 1;
 		background: none;
 		border: none;
 		cursor: pointer;
@@ -24,7 +39,7 @@
 			transition: opacity 0.35s ease, transform 0.35s ease;
 		}
 
-		&:is(:hover, :focus) img {
+		&:is(:hover, :focus-visible) img {
 			opacity: 1;
 			transform: rotate(360deg);
 		}

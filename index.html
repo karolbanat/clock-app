@@ -2,100 +2,101 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta name="desscription" content="Get your current location time details.">
+    <meta name="description" content="Get your current location time details.">
 
-	<link rel="icon" type="image/png" sizes="32x32" href="./dist/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./dist/assets/favicon-32x32.png">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="./dist/css/main.min.css">
+    <link rel="stylesheet" href="./dist/css/main.min.css">
 
-	<title>Frontend Mentor | Clock App</title>
+    <title>Frontend Mentor | Clock App</title>
 </head>
 
 <body data-time="daytime">
 
-	<main>
-		<section id="clock-app" class="clock-app">
-			<h1 class="visually-hidden">Clock app</h1>
-			<div class="clock-app__header | container">
-				<div id="quote-generator" class="quote-generator">
-					<figure class="quote-generator__quote | flow">
-						<blockquote id="quote">The science of operations, as derived
-							from
-							mathematics more especially, is a science of itself, and has its own abstract truth and
-							value.</blockquote>
-						<figcaption id="quote-author" class="quote-generator__author">Ada Lovelace</figcaption>
-					</figure>
-					<button aria-label="Refresh quote"
-							data-action="quote-refresh"
-							class="quote-generator__refresh-button">
-						<img src="./dist/assets/desktop/icon-refresh.svg" alt="">
-					</button>
-				</div>
+    <main>
+        <section data-mode="display" id="clock-app" class="clock-app">
+            <h1 class="visually-hidden">Clock app</h1>
+            <div class="clock-app__header | container">
+                <div id="quote-generator" class="quote-generator">
+                    <figure class="quote-generator__quote | flow">
+                        <blockquote id="quote">The science of operations, as derived
+                            from
+                            mathematics more especially, is a science of itself, and has its own abstract truth and
+                            value.</blockquote>
+                        <figcaption id="quote-author" class="quote-generator__author">Ada Lovelace</figcaption>
+                    </figure>
+                    <button aria-label="Refresh quote"
+                            data-action="quote-refresh"
+                            class="quote-generator__refresh-button">
+                        <img src="./dist/assets/desktop/icon-refresh.svg" alt="">
+                    </button>
+                </div>
 
-				<div class="time-info">
-					<div class="flow" style="--flow-spacer: 1.6rem">
-						<p class="time-info__greeting">
-							<img src="./dist/assets/desktop/icon-sun.svg"
-								 alt=""
-								 id="time-of-day-icon"
-								 class="time-info__icon">
-							<span> Good <span id="greeting">morning</span><span data-hidden="small">, it's
-									currently</span></span>
-						</p>
-						<p class="time-info__time">
-							<span id="current-time">11:37</span><span id="timezone"
-								  class="time-info__timezone">BST</span>
-						</p>
-						<p class="time-info__location">in <span id="location">London, UK</span></p>
-					</div>
-					<button aria-controls="time-details"
-							aria-expanded="false"
-							data-action="toggle-details"
-							class="details-toggle">
-						<span class="details-toggle__more">More</span> <span class="details-toggle__less">Less</span>
-						<span
-							  class="visually-hidden">details</span>
-						<img src="./dist/assets/desktop/icon-arrow-up.svg" alt="" id="details-cta-icon">
-					</button>
-				</div>
-			</div>
+                <div class="time-info">
+                    <div class="flow" style="--flow-spacer: 1.6rem">
+                        <p class="time-info__greeting">
+                            <img src="./dist/assets/desktop/icon-sun.svg"
+                                 alt=""
+                                 id="time-of-day-icon"
+                                 class="time-info__icon">
+                            <span> Good <span id="greeting">morning</span><span data-hidden="small">, it's
+                                    currently</span></span>
+                        </p>
+                        <p class="time-info__time">
+                            <span id="current-time">11:37</span><span id="timezone"
+                                  class="time-info__timezone">BST</span>
+                        </p>
+                        <p class="time-info__location">in <span id="location">London, UK</span></p>
+                    </div>
+                    <button aria-controls="time-details"
+                            aria-expanded="false"
+                            data-action="toggle-details"
+                            class="details-toggle">
+                        <span class="details-toggle__more">More</span> <span class="details-toggle__less">Less</span>
+                        <span
+                              class="visually-hidden">details</span>
+                        <img src="./dist/assets/desktop/icon-arrow-up.svg" alt="">
+                    </button>
+                </div>
+            </div>
 
-			<div id="time-details" class="details">
-				<div class="container">
-					<div class="details__layout">
-						<div class="details__column">
-							<div class="info-group">
-								<p class="info-group__label">Current timezone</p>
-								<p data-details="timezone" class="info-group__data">Europe/London</p>
-							</div>
-							<div class="info-group">
-								<p class="info-group__label">Day of the year</p>
-								<p data-details="day-of-year" class="info-group__data">295</p>
-							</div>
-						</div>
-						<div class="details__column">
-							<div class="info-group">
-								<p class="info-group__label">Day of the week</p>
-								<p data-details="day-of-week" class="info-group__data">5</p>
-							</div>
-							<div class="info-group">
-								<p class="info-group__label">Week number</p>
-								<p data-details="week-number" class="info-group__data">42</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
+            <div id="time-details" class="details">
+                <div class="container">
+                    <div class="details__layout">
+                        <div class="details__column">
+                            <div class="info-group">
+                                <p class="info-group__label">Current timezone</p>
+                                <p data-details="timezone" class="info-group__data">Europe/London</p>
+                            </div>
+                            <div class="info-group">
+                                <p class="info-group__label">Day of the year</p>
+                                <p data-details="day-of-year" class="info-group__data">295</p>
+                            </div>
+                        </div>
+                        <div class="details__column">
+                            <div class="info-group">
+                                <p class="info-group__label">Day of the week</p>
+                                <p data-details="day-of-week" class="info-group__data">5</p>
+                            </div>
+                            <div class="info-group">
+                                <p class="info-group__label">Week number</p>
+                                <p data-details="week-number" class="info-group__data">42</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <script src="./dist/js/main.min.js" defer></script>
 </body>
 
 </html>

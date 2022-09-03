@@ -24,7 +24,7 @@
 
 	/* elements */
 	& img {
-		transition: opacity 0.35s ease;
+		transition: opacity 0.35s ease, transform 0.35s ease;
 	}
 
 	&__less {
@@ -32,7 +32,7 @@
 	}
 
 	/* state */
-	&:is(:hover, :focus) img {
+	&:is(:hover, :focus-visible) img {
 		opacity: 0.75;
 	}
 
@@ -43,6 +43,10 @@
 
 	&[aria-expanded='true'] &__less {
 		display: inline-block;
+	}
+
+	&[aria-expanded='true'] img {
+		transform: rotate(180deg);
 	}
 
 	/* media */
