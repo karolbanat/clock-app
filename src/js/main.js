@@ -22,7 +22,7 @@ const QUOTE_API_BASE = 'https://programming-quotes-api.herokuapp.com/Quotes';
 const IP_API_KEY = 'iMC9RpefbvVTgC7vDIdxLYH14hwAKs9pvi4SEypx';
 const IP_API_BASE = 'https://api.ipbase.com/v2';
 const REQUEST_LIMIT_HIT_CODE = 429;
-const WORLD_TIME_API_BASE = 'http://worldtimeapi.org/api/ip';
+const WORLD_TIME_API_BASE = 'https://worldtimeapi.org/api/ip';
 
 const ICON_SUN = './dist/assets/desktop/icon-sun.svg';
 const ICON_MOON = './dist/assets/desktop/icon-moon.svg';
