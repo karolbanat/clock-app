@@ -4,17 +4,47 @@ $breakpoints: (
 	large: 62em,
 );
 
-$colors: ();
+$colors: (
+	neutral: (
+		100: hsl(0 0% 100%),
+		700: hsl(0 0% 20%),
+		900: hsl(0 0% 0%),
+	),
+);
 
 $font-sizes: (
-	small: (),
-	medium: (),
+	small: (
+		quote: 1.2rem,
+		greeting: 1.5rem,
+		time: 10rem,
+		timezone: 1.5rem,
+		location: 1.5rem,
+		button: 1.2rem,
+		details-label: 1rem,
+		details-data: 2rem,
+	),
+	medium: (
+		quote: 1.8rem,
+		greeting: 1.8rem,
+		time: 17.5rem,
+		timezone: 3.2rem,
+		location: 1.8rem,
+		button: 1.6rem,
+		details-label: 1.3rem,
+		details-data: 4rem,
+	),
+	large: (
+		greeting: 2rem,
+		time: 20rem,
+		timezone: 4rem,
+		location: 2.4rem,
+		details-label: 1.5rem,
+		details-data: 5.6rem,
+	),
 );
-$font-weights: ();
 
-$border-radius: ();
-
-$spacings: (
-	em: (),
-	rem: (),
+$font-weights: (
+	300: 300,
+	400: 400,
+	700: 700,
 );

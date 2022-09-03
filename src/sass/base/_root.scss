@@ -10,6 +10,7 @@
 	}
 
 	// font families
+	--ff-primary: 'Inter', sans-serif;
 
 	// font wieghts
 	@each $font-weight, $value in variables.$font-weights {
@@ -28,18 +29,6 @@
 					--fz-#{$size}: #{$value};
 				}
 			}
-		}
-	}
-
-	// border radius
-	@each $radius, $value in variables.$border-radius {
-		--borr-#{$radius}: #{$value};
-	}
-
-	// spacings
-	@each $unit, $sizes in variables.$spacings {
-		@each $size, $value in $sizes {
-			--spacing-#{$unit}-#{$size}: #{$value};
 		}
 	}
 }

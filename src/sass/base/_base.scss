@@ -1,0 +1,5 @@
+body {
+	font-weight: var(--fw-400);
+	color: var(--clr-neutral-100);
+	background-color: var(--clr-neutral-700); // fallback if image won't load
+}
