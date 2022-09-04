@@ -115,7 +115,7 @@ const handleIcon = (hours) => {
 
 /* set background depending on the time of the day */
 const handleBackgroundImage = (hours) => {
-	const time = isDay(hours) ? 'daytime' : 'nighttime';
+	const time = isDay() ? 'daytime' : 'nighttime';
 	document.body.dataset.time = time;
 };
 
@@ -140,4 +140,4 @@ toggleTimeDetailsBtn.addEventListener('click', handleDetailsToggle);
 
 /*  */
 getRandomQuote();
-// getIPInfo();
+getIPInfo();
