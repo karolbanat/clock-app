@@ -5,6 +5,7 @@ const quoteText = quoteGenerator.querySelector('#quote');
 const quoteAuthor = quoteGenerator.querySelector('#quote-author');
 const refreshQuoteBtn = quoteGenerator.querySelector('button[data-action=quote-refresh]');
 /* elements for time and details handling */
+const timeInfoContainer = document.querySelector('#time-info');
 const timeIcon = document.querySelector('#time-of-day-icon');
 const greetingSpan = document.querySelector('#greeting');
 const currentTimeSpan = document.querySelector('#current-time');
@@ -141,11 +142,17 @@ const isDay = (hours) => {
 const handleDetailsToggle = () => {
 	toggleTimeDetailsBtn.toggleAttribute('data-expanded');
 	const isExpanded = toggleTimeDetailsBtn.hasAttribute('data-expanded');
+	/* toggling quote */
 	quoteGenerator.toggleAttribute('data-hidden', isExpanded);
+	/* setting aria for toggle btn */
 	toggleTimeDetailsBtn.setAttribute('aria-expanded', isExpanded);
-	timeDetailsContainer.toggleAttribute('data-visible', isExpanded);
-	timeDetailsContainer.classList.add('animation-scale-up');
+	/* changing layout for lock app */
 	clockApp.dataset.mode = isExpanded ? 'details' : 'display';
+	/* toggling details info */
+	timeDetailsContainer.toggleAttribute('data-visible', isExpanded);
+	timeDetailsContainer.classList.toggle('move-up', isExpanded);
+	timeInfoContainer.classList.toggle('move-up', isExpanded);
+	timeInfoContainer.classList.toggle('move-down', !isExpanded);
 };
 
 /* event listeners */
