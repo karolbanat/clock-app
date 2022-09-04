@@ -42,6 +42,14 @@ const insertQuote = ({ quote, author }) => {
 
 /* ip info handling */
 const getIPInfo = () => {
+	/* check if data in local storage to prevent multiple requests */
+	const localData = localStorage.getItem('location');
+	if (localData) {
+		handleIPData(JSON.parse(localData));
+		return;
+	}
+
+	/* if no data in local storage, then create request */
 	const requestURI = `${IP_API_BASE}/info?apikey=${IP_API_KEY}`;
 	fetch(requestURI)
 		.then((res) => {
@@ -50,7 +58,13 @@ const getIPInfo = () => {
 		})
 		.then((data) => {
 			const { ip, location } = data.data;
-			handleIPData({ ip: ip, country: location.country.alpha2, city: location.city.name });
+			const locationData = { ip: ip, country: location.country.alpha2, city: location.city.name };
+			handleIPData(locationData);
+			return locationData;
+		})
+		.then((data) => {
+			/* save to local storage */
+			localStorage.setItem('location', JSON.stringify(data));
 		})
 		.catch((error) => {
 			// do nothing for now
